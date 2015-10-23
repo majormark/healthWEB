@@ -1,3 +1,4 @@
 <?php
-hello
+include_once "index.html";
+ echo 'hello';
 ?>
