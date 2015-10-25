@@ -11,15 +11,17 @@ div {
 
 
 /* 正文 */
-.ue-bar{  padding-top:0px; margin:0 auto}
-.ue-bar-wrap{ position:relative; width:100%; height:40px; background:#C70757; }
+.ue-bar{  padding-top:0px; margin:0 auto;}
+.ue-bar-wrap{ position:relative; width:100%; height:50px; background:#c00; z-index:2; }
 .ue-bar-nav .nav-left{float:left;margin:0; padding:0;}
 .ue-bar-nav .nav-right{float:right; margin:0px 30px;}
-.nav-item{ position:relative; float:left; width:100px; height:40px; line-height:40px; text-align:center; font-size:14px; z-index:1;}
-.nav-item a{ display:block; height:40px; color:#fff;vertical-align: middle;}
-.nav-item a:hover{ color:#fff;text-decoration:none;background:#800000}
-.nav-item a:active{ background:#800000}
-.nav-item a:visited { background:#800000}
+.nav-item{ position:relative; float:left; width:100px; height:40px; margin:2px 5px;line-height:40px; text-align:center; font-size:14px; z-index:1;}
+.nav-item a{ display:block; width:80px;height:40px; color:#fff;vertical-align: middle;border-radius: 17px; margin: 0 auto;}
+.nav-item a:visited { background:#800000;text-decoration:none;border-radius: 17px;}
+.nav-item a:hover{ color:#fff;text-decoration:none;background:#800000;border-radius: 17px;}
+
+.nav-item a:active{ background:#800000;text-decoration:none;}
+
 
 .nav-login {
 	float:right;
@@ -40,7 +42,7 @@ div {
    
 }
 
-
+.on{background:#800000;border-radius: 17px;color:#fff;text-decoration:none;}
 
 /*start login*/
 #login_dropdown {

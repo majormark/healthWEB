@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
-*{margin:0; padding:0; list-style:none; text-decoration:none;}
 
+*{ margin:0; padding:0; list-style:none; text-decoration:none;}
 
 div {
 	display:block;
@@ -9,34 +9,32 @@ li,ul,a{
 	list-style: none;
 	text-decoration: none;
 }
-/*登录界面*/
-.login{ 
+/*注册界面*/
+.regi-frame{ 
 	
 	width:560px;
 	height:350px;
-
 	margin:100px auto;
 	border-radius:5px;
-	
 	box-shadow: 0 0 10px #848484;
 }
 
-.login-wrap {
+.regi-wrap {
 	width:500px;
-	height:200px;
+	height:250px;
 	margin:20px auto;
 }
 
-.login-form ul{
+.regi-wrap ul {
 	text-align: center;
 	margin:0;
 }
 
-.login-form li{
-	margin: 20px;
+.regi-wrap li {
+	margin:20px;
 }
 
-.login-form h4{
+.regi-wrap h4 {
 	color:#999;
 	font-weight:100;
 	margin-bottom: 20px;
@@ -71,19 +69,14 @@ li,ul,a{
 	text-decoration: none;
 	border-radius: 2px;
 	min-width: 52px;
+	margin:0 15px;
 }
-
 .btn:HOVER{
 	border-color:#d50000;
 	color:#fff;
 	background-color: #d50000;
 }
-
-.register{
-	margin-left:20px;
-}
-
-.login-title{
+.regi-title{
 	border-bottom:1px solid #ddd;
 	padding:12px;
 }

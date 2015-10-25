@@ -29,7 +29,7 @@
                     </h4></li>
                     <li><strong>用户名</strong><input class="item" type="text" name="username" placeholder="用户名" required="required" size="20"/></li>
                     <li><strong>　密码</strong><input class="item" type="password" name="password" placeholder="密码" required="required" size="20"/></li>
-                    <li><input class="btn" type="submit" name="login" value="登录"/>  <a class="register" href="#">join us!</a></li>
+                    <li><input class="btn" type="submit" name="login" value="登录"/>  <a class="register" href="http://localhost/healthWEB/views/register.php">join us!</a></li>
                    
                 </ul>
             </form>
