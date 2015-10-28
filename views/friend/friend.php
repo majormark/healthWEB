@@ -3,25 +3,24 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>咚咚运动|身体管理</title>
+    <title>咚咚运动|我的好友</title>
     <script type="text/javascript" src="http://localhost/healthWEB/static/script/jquery-1.11.3.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://localhost/healthWEB/static/css/mySports/mySports.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost/healthWEB/static/css/friend/friend.css" />
     <link rel="stylesheet"  href="http://localhost/healthWEB/static/css/base/bootstrap.min.css" />
     
 </head>
 <?php
 
 $links = array();
-$links[]=array("我的运动","mySports.php","glyphicon glyphicon-user");
-$links[]=array("身体管理","body_con.php","glyphicon glyphicon-heart");
-$links[]=array("睡眠分析","sleep_con.php","glyphicon glyphicon-eye-close");
-$self_page = basename($_SERVER['PHP_SELF']);
+$links[]=array("关注","mySports.php","glyphicon glyphicon-user");
+$links[]=array("粉丝","body_con.php","glyphicon glyphicon-heart");
+$self_page = $_SERVER['PHP_SELF'];
 ?>
 <body>
 <div class="body">
     <div class="nav-frame">
         <div class="nav-title">
-            <h3>健康管理</h3>
+            <h3>好友关系</h3>
         </div>
         <div class="nav-wrap">
             <ul class="nav-ul">
@@ -41,7 +40,7 @@ $self_page = basename($_SERVER['PHP_SELF']);
     
     <div class="frame-outer">
         <div class="frame-title">
-            <h3>身体管理<h3/>
+            <h3>我的关注<h3/>
         </div>
         <div class="frame-wrap">
             

@@ -3,25 +3,24 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>咚咚运动|身体管理</title>
+    <title>咚咚运动|我的建议</title>
     <script type="text/javascript" src="http://localhost/healthWEB/static/script/jquery-1.11.3.js"></script>
     <link rel="stylesheet" type="text/css" href="http://localhost/healthWEB/static/css/mySports/mySports.css" />
     <link rel="stylesheet"  href="http://localhost/healthWEB/static/css/base/bootstrap.min.css" />
-    
 </head>
 <?php
 
 $links = array();
-$links[]=array("我的运动","mySports.php","glyphicon glyphicon-user");
-$links[]=array("身体管理","body_con.php","glyphicon glyphicon-heart");
-$links[]=array("睡眠分析","sleep_con.php","glyphicon glyphicon-eye-close");
+$links[]=array("我的建议","mySuggestion.php","glyphicon glyphicon-comment");
+$links[]=array("专家选择","expertSelect.php","glyphicon glyphicon-user");
+$links[]=array("推送　　 ","push.php","glyphicon glyphicon-question-sign");
 $self_page = basename($_SERVER['PHP_SELF']);
 ?>
 <body>
 <div class="body">
     <div class="nav-frame">
         <div class="nav-title">
-            <h3>健康管理</h3>
+            <h3>建议管理</h3>
         </div>
         <div class="nav-wrap">
             <ul class="nav-ul">
@@ -31,17 +30,14 @@ $self_page = basename($_SERVER['PHP_SELF']);
                    echo "\n";
                 }
             ?>
-<!--                <li class="item"><a  href="#" target="frame"><span class="glyphicon glyphicon-user"></span><span class="nav-con">我的运动</span></a></li> -->
-<!--                <li class="item"><a  href="#" target="frame"><span class="glyphicon glyphicon-heart"></span><span class="nav-con">身体管理</span></a></li> -->
-<!--                <li class="item"><a  href="#" target="frame"><span class="glyphicon glyphicon-eye-close"></span><span class="nav-con">睡眠分析</span></a></li> -->
-               
+        
             </ul>
         </div>
     </div>
     
     <div class="frame-outer">
         <div class="frame-title">
-            <h3>身体管理<h3/>
+            <h3>tab/doctor/coach<h3/>
         </div>
         <div class="frame-wrap">
             

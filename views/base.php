@@ -16,7 +16,8 @@ $links = array();
 $links[]=array("首页","/healthWEB/views/index.php");
 $links[]=array("运动","/healthWEB/views/sports/mySports.php");
 $links[]=array("竞赛","#");
-$links[]=array("活动","#");
+$links[]=array("活动","/healthWEB/views/activity/activity_square.php");
+$links[]=array("健康咨询","/healthWEB/views/suggestion/mySuggestion.php");
 $self_page = $_SERVER['PHP_SELF'];
 ?>
 <body>
@@ -33,7 +34,7 @@ $self_page = $_SERVER['PHP_SELF'];
 	        <ul class="nav-left">
 	        <?php
                 foreach($links as $link){
-                   printf('<li class="nav-item"><a %s href="%s">%s</a></li>' , $self_page==$link[1]?' class="on"':'' , $link[1], $link[0]);
+                   printf('<li class="nav-item"><a %s href="%s">%s</a></li>' , ($self_page==$link[1])?' class="on"':'' , $link[1], $link[0]);
                    echo "\n";
                 }
             ?>
@@ -44,8 +45,9 @@ $self_page = $_SERVER['PHP_SELF'];
 	    		         echo '<li class="nav-item dropdown" id="login_dropdown">
                                   <a id="user" href="#" class="dropdown-toggle" data-toggle="dropdown" >hi,'.$_GET["username"].'<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="user">
-                                <li ><a   href="#">个人信息</a></li>
-                                <li ><a   href="/logout">退出登录</a></li>
+                                <li ><a   href="/healthWEB/views/user/accountSet.php">个人信息</a></li>
+                                <li ><a   href="/healthWEB/views/friend/friend.php">我的好友</a></li>
+                                <li ><a   href="#">退出登录</a></li>
                             </ul>
                         </li>';
 	    		     } else {
