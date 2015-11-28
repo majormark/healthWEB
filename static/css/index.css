@@ -92,7 +92,6 @@ li,ul,img,a,div{
 	margin:30px auto;
 	
 	padding:10px ;
-	border:black 1px solid;
 }
 .saylist{margin:8px auto; padding:4px 0; border-bottom:1px dotted #d3d3d3;} 
 .saylist img{float:left; width:50px; margin:4px;} 

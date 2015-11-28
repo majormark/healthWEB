@@ -12,9 +12,9 @@
 </head>
 <?php 
 define('INCLUDE_CHECK',1); 
-require_once('../model/friend/connect.php'); 
+require_once('../model/sqlHelper/connect.php'); 
 require_once('../model/friend/function.php'); 
-$db = new MyDB('../model/friend/test.db');
+$db = new MyDB('../model/sqlHelper/test.db');
 if(!$db){
     echo $db->lastErrorMsg();
 } 

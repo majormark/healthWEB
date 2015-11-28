@@ -19,7 +19,7 @@
                            if(!empty($_GET['errno'])) {
                                $errno=$_GET['errno'];
                                if($errno==1){
-                                   echo '<font color="red">用户名或密码错误!</font>';
+                                   echo '<font color="red">该用户名已存在!</font>';
                                }  
                            }else {
                                echo '请注册！';
@@ -29,7 +29,7 @@
                     </h4></li>
                         <li><b>用户名</b><input class="item" type="text" name="username" placeholder="例如：yyy" /></li>
                         <li><b>　密码</b><input class="item" type="password" name="password" placeholder="例如：123456" /></li>
-                        <li><b>　邮箱</b><input class="item" type="text" name="email" placeholder="例如：xiaoming@163.com" /></li>
+<!--                         <li><b>　邮箱</b><input class="item" type="text" name="email" placeholder="例如：xiaoming@163.com" /></li> -->
                         <li><input class="btn" type="submit" name="submit" value="注册" /><input class="btn" type="reset" name="reset" value="重填" /></li>                       
                     </ul>
                 </form>
