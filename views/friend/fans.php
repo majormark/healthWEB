@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>咚咚运动|我的好友</title>
     <script type="text/javascript" src="http://localhost/healthWEB/static/script/jquery-1.11.3.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://localhost/healthWEB/static/css/friend/friend.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost/healthWEB/static/css/friend/fans.css" />
     <link rel="stylesheet"  href="http://localhost/healthWEB/static/css/base/bootstrap.min.css" />
     
 </head>
@@ -40,7 +40,7 @@ $self_page = basename($_SERVER['PHP_SELF']);
     
     <div class="frame-outer">
         <div class="frame-title">
-            <h3>我的3个关注<h3/>
+            <h3>我的3个粉丝<h3/>
         </div>
         <div class="frame-wrap">
             <div class="friend-list"> 
@@ -49,7 +49,7 @@ $self_page = basename($_SERVER['PHP_SELF']);
                     <span class="left"><a href="#"><strong>Demo</strong></a></span>
                     <span class="right"><a>发私信</a></span><br /><br />
                     <span class="left">四川</span>
-                    <span class="right"><a>取消关注</a></span>
+                    <span class="right"><a>关注</a></span>
                 </div> 
                 <div class="clear"></div> 
             </div> 

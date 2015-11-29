@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>咚咚运动|个人设置</title>
     <script type="text/javascript" src="http://localhost/healthWEB/static/script/jquery-1.11.3.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://localhost/healthWEB/static/css/user/accountSet.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost/healthWEB/static/css/user/accountSafe.css" />
     <link rel="stylesheet"  href="http://localhost/healthWEB/static/css/base/bootstrap.min.css" />
     
 </head>
@@ -40,10 +40,18 @@ $self_page = $_SERVER['PHP_SELF'];
     
     <div class="frame-outer">
         <div class="frame-title">
-            <h3>tab<h3/>
+            <h3>账号安全<h3/>
         </div>
         <div class="frame-wrap">
-            
+            <form action="#" >
+                <h4><b>修改密码</b></h4>
+                <ul>
+                    <li><b>　　旧密码</b><input class="item" type="password" name="old_pwd"></li>
+                    <li><b>　　新密码</b><input class="item" type="password" name="new_pwd"></li>
+                    <li><b>确认新密码</b><input class="item" type="password" name="new_again_pwd"></li>
+                    <li><input class="btn" type="submit" name="submit" value="保存"></li>
+                </ul>
+            </form>
         </div>
     </div>
 </div>
