@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>咚咚运动|身体管理</title>
     <script type="text/javascript" src="http://localhost/healthWEB/static/script/jquery-1.11.3.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://localhost/healthWEB/static/css/mySports/mySports.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost/healthWEB/static/css/mySports/body_con.css" />
     <link rel="stylesheet"  href="http://localhost/healthWEB/static/css/base/bootstrap.min.css" />
     
 </head>
@@ -40,12 +40,39 @@ $self_page = basename($_SERVER['PHP_SELF']);
     </div>
     
     <div class="frame-outer">
-        <div class="frame-title">
+        <div class="title">
             <h3>身体管理<h3/>
         </div>
-        <div class="frame-wrap">
-            
+        <div class="health-bmi">
+            <div class="wrap">
+                <div class="circle-result">
+                    <p class="health-lv">健康</p>
+                    <p class="bmi-lv" >BMI</p>
+                </div>
+                <div class="back-small">
+                    <form action="#" method="post">
+                        <ul>
+                            
+                            <li>身高<input class="input" name="height" type="text" /> 厘米</li>
+                            <li>体重<input class="input" name="weight" type="text" /> 公斤</li>
+                            <li><input class="btn" name="submit" type="submit" value="保存">
+                        </ul>
+                    </form>
+                </div>
+                <div class="scale">
+                    <ul>
+                        <li >BMI度量尺</li>
+                        <li class="one"></li>
+                        <li class="two"><span style="margin-left: -100px;color:white;">18.5</span></li>
+                        <li class="three"><span style="margin-left: -80px;color:white;">24</span></li>
+                        <li class="four"><span style="margin-left: -80px;color:white;">28</span></li>
+                        
+                    </ul>
+                </div>
+            </div>
         </div>
+        
+        
     </div>
 </div>
 </body>

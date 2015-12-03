@@ -3,6 +3,7 @@
 li,ul,img,a,div{
     border: 0;
     list-style: none;
+	padding:0;
 }
 
 div {
@@ -15,6 +16,13 @@ div {
 .ue-bar-wrap{ position:relative; width:100%; height:50px; background:#c00; z-index:2; }
 .ue-bar-nav .nav-left{float:left;margin:0; padding:0;}
 .ue-bar-nav .nav-right{float:right; margin:0px 30px;}
+.user-item{ margin:2px 5px;height:40px;line-height:40px;color:white;}
+.user-item a{color:#fff;}
+.user-item a:HOVER{color:#fff;text-decoration: none;}
+.user-item a:ACTIVE{color:#fff;text-decoration: none;}
+.nav-item a:visited{color:#fff;text-decoration: none;}
+.ue-bar-nav .nav-right .dropdown-menu{width:50px;}
+.ue-bar-nav .nav-right .dropdown-menu li{padding: 0; margin:0;}
 .nav-item{ position:relative; float:left; width:100px; height:40px; margin:2px 5px;line-height:40px; text-align:center; font-size:14px; z-index:1;}
 .nav-item a{ display:block; width:80px;height:40px; color:#fff;vertical-align: middle;border-radius: 17px; margin: 0 auto;}
 .nav-item a:visited { background:#800000;text-decoration:none;border-radius: 17px;}

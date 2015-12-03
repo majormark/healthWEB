@@ -55,17 +55,80 @@ li,ul,img,a,div{
 .frame-outer{
 	position:relative;
 	width:731px;
-	height: 1175px;
+	height: 1450px;
 	float:left;
 	margin-left:15px;
 	margin-top: 10px;
 	border-radius:10px;
 	box-shadow: 0 0 14px #848484;
 	background: #fff;
-}
-.frame-wrap{
-	width:731px;
-	height: 1075px;
-	
+	padding: 25px;
 }
 
+.frame-outer .title{
+	font-family: "微软雅黑";
+}
+
+.health-con {
+	height:300px;
+}
+.health-con .target{
+	border-radius:50%;
+	width:180px;
+	height:180px;
+	background-color: #FFE3AC;
+	float:left;
+	margin-left: 40px;
+}
+
+.health-con .sleep{
+	border-radius:50%;
+	width:180px;
+	height:180px;
+	background-color: #6FC4DC;
+	float:left;
+	margin-left: 40px;
+}
+
+.health-con .health{
+	border-radius:50%;
+	width:180px;
+	height:180px;
+	background-color: #E7F5CE;
+	float:left;
+	margin-left: 40px;
+}
+
+.sports-total{
+	height:200px;
+}
+
+.distance,.time,.energy{
+	float:left;
+}
+
+.sports-total img{
+	float:left;
+}
+
+.sports-total .wrap .distance{ margin-left:30px;}
+.sports-total .wrap .time{ margin-left:140px;}
+.sports-total .wrap .energy{ margin-left:120px;}
+.sports-total .wrap span{float: left;}
+
+.transfer{height:300px;	border:1px black solid;}
+
+.transfer .wrap .circle, .transfer .wrap .gas{
+	width:163px;
+	height:176px;
+	background-color: #F1CC7E;
+	float:left;
+	margin-left: 2px;
+}
+.transfer .wrap .meat, .transfer .wrap .light{
+	width:163px;
+	height:176px;
+	background-color: #B0B0B0;
+	float:left;
+	margin-left: 2px;
+}

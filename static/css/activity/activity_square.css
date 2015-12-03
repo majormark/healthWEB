@@ -37,6 +37,13 @@ li,ul,img,a,div{
 	height:300px;
 }
 
+.nav-wrap p{
+	margin:10px;
+}
+
+.nav-wrap li{
+	line-height: 28px;
+}
 .frame-outer{
 	position:relative;
 	width:731px;
@@ -59,7 +66,7 @@ li,ul,img,a,div{
 .frame-wrap{
 	margin:30px auto;
 }
-.list{margin:8px auto; padding:4px 0; border-bottom:1px dotted #d3d3d3;height:80px;} 
+.list{margin:8px auto; padding:4px 0; border-bottom:1px dotted #d3d3d3;height:100px;} 
 .list img{float:left; width:50px; margin:4px 0px;}
 .list p{font-size: 10px;}
 .info{float:left; width:530px; overflow:hidden;text-align: left; margin-left: 10px;} 

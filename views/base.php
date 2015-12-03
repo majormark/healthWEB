@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -7,7 +8,7 @@
 
 
 <script type="text/javascript" src="http://localhost/healthWEB/static/script/jquery-1.11.3.js"></script>
-<script  src="http://localhost/healthWEB/static/script/bootstrap.js"></script>
+<script  src="http://localhost/healthWEB/static/script/bootstrap.min.js"></script>
   
 </head>
 <?php
@@ -41,13 +42,14 @@ $self_page = $_SERVER['PHP_SELF'];
 	    	</ul>
 	    	<ul class="nav-right">
 	    		<?php 
-	    		     if(!empty($_GET["username"])) {
-	    		         echo '<li class="nav-item dropdown" id="login_dropdown">
-                                  <a id="user" href="#" class="dropdown-toggle" data-toggle="dropdown" >hi,'.$_GET["username"].'<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="user">
-                                <li ><a   href="/healthWEB/views/user/accountSet.php">个人信息</a></li>
-                                <li ><a   href="/healthWEB/views/friend/friend.php">我的好友</a></li>
-                                <li ><a   href="#">退出登录</a></li>
+	    		     if(isset($_SESSION['username'])) {
+	    		         
+	    		         echo '<li class="user-item dropdown" id="login_dropdown">
+                                  <a id="user" href="#" class="dropdown-toggle" data-toggle="dropdown" >hi,'.$_SESSION['username'].'<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                <li ><a href="/healthWEB/views/user/accountSet.php">个人信息</a></li>
+                                <li ><a href="/healthWEB/views/friend/friend.php">我的好友</a></li>
+                                <li ><a href="/healthWEB/views/login.php">退出登录</a></li>
                             </ul>
                         </li>';
 	    		     } else {

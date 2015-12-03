@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION['username'])){
+    session_destroy();
+} 
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -19,8 +25,10 @@
                            if(!empty($_GET['errno'])) {
                                $errno=$_GET['errno'];
                                if($errno==1){
-                                   echo '<font color="red">用户名或密码错误!</font>';
-                               }  
+                                   echo '<font color="red">密码错误!</font>';
+                               } else if($errno==2){
+                                   echo '<font color="red">用户名不存在或申请未通过!</font>';
+                               }
                            }else {
                                echo '你必须先登录!';
                            }

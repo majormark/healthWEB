@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>咚咚运动|睡眠分析</title>
     <script type="text/javascript" src="http://localhost/healthWEB/static/script/jquery-1.11.3.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://localhost/healthWEB/static/css/mySports/mySports.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost/healthWEB/static/css/mySports/sleep_con.css" />
     <link rel="stylesheet"  href="http://localhost/healthWEB/static/css/base/bootstrap.min.css" />
     
 </head>
@@ -40,11 +40,45 @@ $self_page = basename($_SERVER['PHP_SELF']);
     </div>
     
     <div class="frame-outer">
-        <div class="frame-title">
+        <div class="title">
             <h3>咚咚睡眠<h3/>
         </div>
-        <div class="frame-wrap">
-            
+        <div class="sleep-analyse">
+            <div class="wrap">
+                <div class="circle-result">
+                    <p class="sleep-lv">睡眠有效率</p>
+                    <p class="percent-lv" >0%</p>
+                </div>
+                <div class="start">
+                    <ul>
+                        <li>睡眠开始</li>
+                        <li>0</li>
+                    </ul>
+                </div>
+                <div class="end">
+                    <ul>
+                        <li>睡眠结束</li>
+                        <li>0</li>
+                    </ul>
+                </div>
+                <div class="total">
+                    <ul>
+                        <li>睡眠总时长</li>
+                        <li>0</li>
+                    </ul>
+                </div>
+                <div class="useful">
+                    <ul>
+                        <li>有效睡眠</li>
+                        <li>0</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="wrap2">
+                <div class="title-small">
+                    <h4>睡眠曲线图</h4>
+                </div>
+            </div>
         </div>
     </div>
 </div>

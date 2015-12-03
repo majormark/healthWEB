@@ -40,11 +40,41 @@ $self_page = basename($_SERVER['PHP_SELF']);
     </div>
     
     <div class="frame-outer">
-        <div class="frame-title">
-            <h3>你本周的健康状况<h3/>
+        <div class="health-con">
+            <div class="title">
+                <h3>你本周的健康状况<h3/>
+            </div>
+            <div class="wrap">
+                <div class="target"><span>aaaaaaaaaaaaaaa</span><br />aaaaaa</div>
+                <div class="sleep"></div>
+                <div class="health"></div>
+            </div>
         </div>
-        <div class="frame-wrap">
-            
+        <div class="sports-total">
+            <div class="title">
+                <h3>你的运动总量<h3/>
+            </div>
+            <div class="wrap">
+                <div class="distance"><img src=../../static/vendor/image/walk.png><span>aaa</span><br /><span>bbb</span></div>
+                <div class="time"><img src=../../static/vendor/image/total_time.png><span>aaa</span><br /><span>bbb</span></div>
+                <div class="energy"><img src=../../static/vendor/image/hot.png><span>aaa</span><br /><span>bbb</span></div>
+            </div>
+        </div> 
+        <div class="transfer">
+            <div class="title">
+                <h3>这些运动量可以<h3/>
+            </div>
+            <div class="wrap">
+                <div class="circle"></div>
+                <div class="meat"></div>
+                <div class="gas"></div>
+                <div class="light"></div>
+            </div>
+        </div> 
+        <div class="rank">
+            <div class="title">
+                <h3>朋友排行</h3>
+            </div>
         </div>
     </div>
 </div>

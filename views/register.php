@@ -20,7 +20,11 @@
                                $errno=$_GET['errno'];
                                if($errno==1){
                                    echo '<font color="red">该用户名已存在!</font>';
-                               }  
+                               } else if($errno==2){
+                                   echo '<font color="red">注册成功!</font>';
+                               }  else if($errno==3){
+                                   echo '<font color="red">申请未通过</font>';
+                               } 
                            }else {
                                echo '请注册！';
                            }
@@ -29,7 +33,8 @@
                     </h4></li>
                         <li><b>用户名</b><input class="item" type="text" name="username" placeholder="例如：yyy" /></li>
                         <li><b>　密码</b><input class="item" type="password" name="password" placeholder="例如：123456" /></li>
-                        <li><input class="btn" type="submit" name="submit" value="注册" /><input class="btn" type="reset" name="reset" value="重填" /></li>                       
+                        <li><b>　您是</b><select class="item-select" name="role"><option value="user">普通用户</option><option value="doctor">医生</option><option value="coach">教练</option></select></li>
+                        <li><input class="btn" type="submit" name="submit" value="注册" /><a href="http://localhost/healthWEB/views/login.php"/>back</a></li>                       
                     </ul>
                 </form>
             </div>

@@ -24,7 +24,83 @@ jQuery(document).ready(function($) {
 })
 </script>
 </head>
-
+<?php 
+    			         require_once('../../model/sqlHelper/connect.php');
+    			         $db=new MyDB();
+    			         if(!$db){
+    			             echo $db->lastErrorMsg();
+    			         }
+    			         $sql =<<<EOF
+      SELECT * FROM activity ORDER BY created_time DESC;
+EOF;
+    			         $ret = $db->query($sql);
+    			         if(!$ret){
+    			             echo $db->lastErrorMsg();
+    			         }
+    			         
+    			         $act_list='';
+    			         while($row=$ret->fetchArray(SQLITE3_ASSOC)){
+    			             $act_list.=formatSay($row['activity_id'],$row['title'],$row['detail'],$row['created_time']);
+    			         }
+    			         $user = $_SESSION['username'];
+    			         $sql =<<<EOF
+      SELECT * FROM activity_join aj, activity a where aj.activity_id = a.activity_id and aj.username='$user'
+EOF;
+    			     
+    			         $ret = $db->query($sql);
+    			         if(!$ret){
+    			             echo $db->lastErrorMsg();
+    			         }
+    			         
+    			         $my_act_list='';
+    			         while($row=$ret->fetchArray(SQLITE3_ASSOC)){
+    			             $my_act_list.='
+    			                 <li>'.$row['title'].'</li>
+    			                                
+    			                 ';
+    			         }
+    			         function formatSay($id,$title,$detail,$created_time){
+    			             $str= '
+		          <div class="list">
+					<a href="#"><img
+						src="http://localhost/healthWEB/static/vendor/image/2.jpg" alt="" /></a>
+					<div class="info">
+						<span class="left"><a href="#"><strong>'.$title.'</strong></a></span> <span
+							class="right">';
+							if(isJoin($id,$_SESSION['username'])){
+    			                 $str.='<a href="http://localhost/healthWEB/controller/activity/activity_square_controller.php?id='.$id.'&op=out">取消加入</a></span><br />';
+    			             } else{
+    			                 $str.='<a href="http://localhost/healthWEB/controller/activity/activity_square_controller.php?id='.$id.'&op=join">加入</a></span><br />';
+    			             }
+							
+							$str.='
+						<p class="left">'.$detail.'</p><br/>
+						<div class="date">'.$created_time.'</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+		    ';
+							return $str;
+    			         }
+    			         
+    			     function isJoin($id,$username){
+    			         $db=new MyDB();
+    			         if(!$db){
+    			             echo $db->lastErrorMsg();
+    			         }
+    			         $sql =<<<EOF
+      SELECT * FROM activity_join where activity_id='$id' and username='$username' 
+EOF;
+    			         $ret = $db->query($sql);
+    			         $row=$ret->fetchArray(SQLITE3_ASSOC);
+    			         if($row){
+    			            return true;
+    			         } else {
+    			             return false;
+    			         }
+    			     }    
+    			     
+?>
 <body>
 	<div class="body">
 		<div class="nav-frame">
@@ -32,10 +108,10 @@ jQuery(document).ready(function($) {
 				<h3>我的活动</h3>
 			</div>
 			<div class="nav-wrap">
+			    <p> </p>
 				<ul>
-					<li>活动一</li>
-					<li>活动二</li>
-					<li>活动三</li>
+				    <?php echo $my_act_list;?>
+					
 				</ul>
 			</div>
 		</div>
@@ -44,21 +120,22 @@ jQuery(document).ready(function($) {
 			<div class="frame-title">
 				<h3>
 					最新活动
-					<h3 />
+				<h3 />
 			
 			</div>
 			<div class="frame-wrap">
-				<div class="doctor-list list">
-					<a href="#"><img
-						src="http://localhost/healthWEB/static/vendor/image/2.jpg" alt="" /></a>
-					<div class="info">
-						<span class="left"><a href="#"><strong>Demo</strong></a></span> <span
-							class="right"><a class=" theme-login" href="javascript:;">查看详情</a></span><br />
-						<p class="left">内容</p>
-						<div class="date"></div>
-					</div>
-					<div class="clear"></div>
-				</div>
+			  <?php echo $act_list;?>
+<!-- 				<div class="list"> -->
+<!-- 					<a href="#"><img -->
+<!-- 						src="http://localhost/healthWEB/static/vendor/image/2.jpg" alt="" /></a> -->
+<!-- 					<div class="info"> -->
+<!-- 						<span class="left"><a href="#"><strong>Demo</strong></a></span> <span -->
+<!-- 							class="right"><a class=" theme-login" href="javascript:;">查看详情</a></span><br /> -->
+<!-- 						<p class="left">内容</p> -->
+<!-- 						<div class="date"></div> -->
+<!-- 					</div> -->
+<!-- 					<div class="clear"></div> -->
+<!-- 				</div> -->
 			</div>
 		</div>
 

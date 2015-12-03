@@ -1,9 +1,9 @@
 <?php
 class MyDB extends SQLite3
 {
-    function __construct($db_path)
+    function __construct()
     {
-        $this->open($db_path);
+        $this->open('F:/Apache/wamp/www/healthWEB/model/sqlHelper/test.db');
     }
 }
 
