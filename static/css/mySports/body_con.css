@@ -1,0 +1,158 @@
+@CHARSET "UTF-8";
+*{ margin:0; padding:0; list-style:none; text-decoration:none;}
+
+.body{min-width: 1000px;
+min-height: 100%;
+margin: 0 auto;
+z-index: 0;
+background-color: #f3f3f3;
+text-align: center;
+overflow: hidden;
+}
+
+li,ul,img,a,div{
+    border: 0;
+    list-style: none;
+}
+
+.nav-frame{
+	width:235px;
+	height: 500px;
+	margin-left:200px;
+	margin-top:40px;
+	float:left;
+}
+
+.nav-title {
+	font-size: 24px;
+	padding: 0 0 0 38px;
+	font-weight: normal;
+}
+
+.nav-wrap {
+	margin-top:40px;
+}
+.nav-wrap .item{
+	
+	padding: 0px 30px;
+	text-align:center;
+	width:220px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.nav-wrap .nav-con{
+	
+	margin-left:20px;
+}
+
+.nav-ul a{ display:block; height:40px; vertical-align: middle; margin:10px 0;}
+.nav-ul a:visited { background:#f66;text-decoration:none;}
+.nav-ul a:hover{ color:#fff;text-decoration:none;background:#f66;border-radius: 10px;}
+
+.on{background:#f66;border-radius: 10px;color:#fff;text-decoration:none;}
+
+.frame-outer{
+	position:relative;
+	width:731px;
+	height: 1175px;
+	float:left;
+	margin-left:15px;
+	margin-top: 10px;
+	border-radius:10px;
+	box-shadow: 0 0 14px #848484;
+	background: #fff;
+	padding: 25px;
+	font-family: "微软雅黑";
+}
+
+.frame-outer .title{
+	font-family: "微软雅黑";
+}
+
+.frame-outer .wrap{
+	position: relative;
+}
+.health-bmi{
+	width: 100%;
+	height: 398px;
+	background-color: #F3F3F3;
+	border-radius:10px;
+}
+.health-bmi .circle-result{
+	border-radius:50%;
+	width: 135px;
+	height: 135px;
+	background-color: #7FA731;
+	border:1px solid white;
+	margin-left:40px;
+	margin-top: 40px;
+	float:left;
+	z-index: 3;
+	position: absolute;
+}
+.health-lv{
+	color:#fff;
+	text-align: center;
+	font-size:36px;
+	margin-top:25px;
+}
+.bmi-lv{
+	color:#fff;font-size: 18px;
+}
+
+.health-bmi .back-small{
+	margin-left:108px;
+	margin-top: 40px;
+	float:left;
+	width: 550px;
+	height: 135px;
+	background-color: #E8EEE1;
+	
+}
+
+.health-bmi .back-small ul{
+	margin-top:30px;
+}
+.health-bmi .back-small li{
+	margin-top:5px;
+}
+.health-bmi .back-small .input{
+	height: 30px;
+	line-height: 21px;
+	color: #555;
+	width: 50px;
+	vertical-align: baseline;
+	border-radius: 2px;
+	box-shadow: inset 0 1px 0 #f8f8f8;
+	background-color: #fff;
+	padding: 4px 6px;
+	margin-left:5px;
+	border: solid 1px #d2d2d2;
+	border-left-color: #ccc;
+	border-top-color: #ccc;
+}
+
+.btn{
+	cursor: pointer;/*让鼠标变成手*/
+	
+	border-color: #ff0000;
+	color: #F3F7FC;
+	background-color: #c0c0c0;
+	text-decoration: none;
+	border-radius: 2px;
+	min-width: 52px;
+}
+.scale{
+	margin-left:180px;
+	margin-top:100px;
+	float:left;
+}
+.scale li{
+	float: left;
+	height:18px;
+}
+.one{background-color: #96CCE8; width:45px;} 
+.two{background-color: #B2D67E; width:110px;}
+.three{background-color: #F5D077; width:80px;}
+.four{background-color: #F29C9C; width:75px;}
