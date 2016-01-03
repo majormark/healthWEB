@@ -28,9 +28,18 @@ EOF;
             $state=1;
             if($role!='user') $state=0;
             $sql =<<<EOF
-          INSERT INTO user (nickname,password,created_time,state,role)
-          VALUES ('$username','$passwd', '$date','$state','$role');
+          INSERT INTO user (nickname,password,created_time,state,role,birthday)
+          VALUES ('$username','$passwd', '$date','$state','$role','1980-1-1');
 EOF;
+            $ret = $db->exec($sql);
+            if(!$ret){
+                die($db->lastErrorMsg());
+            }
+            $sql =<<<EOF
+          INSERT INTO body_con (username)
+          VALUES ('$username');
+EOF;
+            
             $ret = $db->exec($sql);
             if(!$ret){
                 die($db->lastErrorMsg());

@@ -82,15 +82,15 @@ li,ul,img,a,div{
 .info .left strong{margin-right:6px;} 
 .info .time{float:left;overflow:hidden;text-align: left;}
 .info .right{float: right;line-height:20px; } 
-.list a{
-	cursor: pointer;
+.list a,.list a:HOVER{
+	cursor: pointer;text-decoration: none;
 }
 
 .date{color:#999;}
 
 
 .theme-popover-mask {
-	z-index: 9998;
+	
 	position:fixed;
 	top:0;
 	left:0;
@@ -102,7 +102,7 @@ li,ul,img,a,div{
 	display:none
 }
 .theme-popover, .theme-popover2 {
-	z-index:9999;
+	
 	position:fixed;
 	top:30%;
 	left:50%;
@@ -110,9 +110,9 @@ li,ul,img,a,div{
 	height:600px;
 	margin:-180px 0 0 -330px;
 	border-radius:5px;
-	border:solid 2px #666;
+	
 	background-color:#fff;
-	box-shadow: 0 0 10px #666;
+	box-shadow: 0 0 5px #d0d0d0;
 	overflow-y: auto;
 	overflow-x: auto;
 }
@@ -174,5 +174,5 @@ li,ul,img,a,div{
 	border-left-color: #ccc;
 	border-top-color: #ccc;
 }
-
+.theme-popover2 .content a:HOVER{text-decoration: none;}
 .btn{background-color: #ff0000; color:#fff;}

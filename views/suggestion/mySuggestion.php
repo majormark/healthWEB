@@ -39,12 +39,78 @@ $links[] = array(
     "expertSelect.php",
     "glyphicon glyphicon-user"
 );
-$links[] = array(
-    "推送　　 ",
-    "push.php",
-    "glyphicon glyphicon-question-sign"
-);
+
 $self_page = basename($_SERVER['PHP_SELF']);
+?>
+
+<?php 
+    			         require_once('../../model/sqlHelper/connect.php');
+    			         $db=new MyDB();
+    			         if(!$db){
+    			             echo $db->lastErrorMsg();
+    			         }
+    			         $user=$_SESSION['username'];
+    			         $sql1 =<<<EOF
+      SELECT * FROM suggestion s, user u where s.expert =u.nickname and s.user='$user' and u.role='doctor'
+EOF;
+    			         $ret = $db->query($sql1);
+    			         if(!$ret){
+    			             echo $db->lastErrorMsg();
+    			         }
+    			         
+    			         $doctor_list='';
+    			         while($row=$ret->fetchArray(SQLITE3_ASSOC)){
+    			             $doctor_list.=formatSay($row['nickname'],$row['question'],$row['detail'],$row['answer']);
+    			         }
+    			         $sql2 =<<<EOF
+      SELECT * FROM suggestion s, user u where s.expert =u.nickname and s.user='$user' and u.role='coach'
+EOF;
+    			         $ret = $db->query($sql2);
+    			         if(!$ret){
+    			             echo $db->lastErrorMsg();
+    			         }
+    			         
+    			         $coach_list='';
+    			         while($row=$ret->fetchArray(SQLITE3_ASSOC)){
+    			             $coach_list.=formatSay($row['nickname'],$row['question'],$row['detail'],$row['answer']);
+    			         }
+    			        
+    			         function formatSay($expert,$question,$detail,$answer){
+    			             $str= '
+		          <div class="list">
+					
+					<div class="info">
+    			        <ul>
+						  <li><span class="left"><a href="#"><strong>'.$expert.'</strong></a></span></li>';
+    			             
+							$str.='
+						<li><p class="left">问题：'.$question.'</p></li>
+    			        <li><p class="left">详细：'.$detail.'</p></li>
+    			         <li><p class=left>回复：'.$answer.'</p></li>
+					</div>
+					<div class="clear"></div>
+				</div>
+		    ';
+							return $str;
+    			         }
+    			         
+    			     function isJoin($expert,$username){
+    			         $db=new MyDB();
+    			         if(!$db){
+    			             echo $db->lastErrorMsg();
+    			         }
+    			         $sql =<<<EOF
+      SELECT * FROM health_work where expert='$expert' and user='$username' 
+EOF;
+    			         $ret = $db->query($sql);
+    			         $row=$ret->fetchArray(SQLITE3_ASSOC);
+    			         if($row){
+    			            return true;
+    			         } else {
+    			             return false;
+    			         }
+    			     }    
+    			     
 ?>
 <body>
 	<div class="body">
@@ -78,33 +144,13 @@ $self_page = basename($_SERVER['PHP_SELF']);
 			<div class="frame-wrap">
 				<div class="tab-content">
 					<div class="tab-pane active" id="panel-783427">
-						<div class="coach-list list">
-							<a href="#"><img
-								src="http://localhost/healthWEB/static/vendor/image/2.jpg"
-								alt="" /></a>
-							<div class="info">
-								<span class="left"><a href="#"><strong>Demo</strong></a></span>
-								<span class="right"><a class=" theme-login" href="javascript:;">查看详情</a></span><br />
-								<p class="left">内容</p>
-								<div class="date"></div>
-							</div>
-							<div class="clear"></div>
-						</div>
+					<?php echo $coach_list;?>
+						
 					</div>
 
 					<div class="tab-pane" id="panel-524521">
-						<div class="doctor-list list">
-							<a href="#"><img
-								src="http://localhost/healthWEB/static/vendor/image/2.jpg"
-								alt="" /></a>
-							<div class="info">
-								<span class="left"><a href="#"><strong>Demo</strong></a></span>
-								<span class="right"><a class=" theme-login" href="javascript:;">查看详情</a></span><br />
-								<p class="left">内容</p>
-								<div class="date"></div>
-							</div>
-							<div class="clear"></div>
-						</div>
+					<?php echo $doctor_list;?>
+						
 					</div>
 				</div>
 			</div>

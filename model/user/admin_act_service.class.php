@@ -30,7 +30,7 @@ EOF;
             
             $created_time= date("Y-m-d H:i:s");
             $sql =<<<EOF
-      UPDATE activity SET title='$title',detail='$detail', created_time='$created_time' where activity_id=$id
+      UPDATE activity SET title='$title',detail='$detail', created_time='$created_time' where activity_id='$id'
 EOF;
             $ret = $db->exec($sql);
             if(!$ret){
@@ -54,6 +54,14 @@ EOF;
             if(!$ret){
                 echo $db->lastErrorMsg();
             }
+            $sql =<<<EOF
+      DELETE FROM activity_join where activity_id='$id'
+EOF;
+            $ret = $db->exec($sql);
+            if(!$ret){
+                echo $db->lastErrorMsg();
+            }
+            
             $db->close();
         
             return true;

@@ -128,6 +128,9 @@ li,ul,img,a,div{
 	background-color: #ff0000;
 	margin:0 80px;
 }
+
+.frame-title .quit{cursor:pointer; margin-left: 550px;font-weight: bold;}
+.frame-title a:HOVER{text-decoration:none;}
 #panel-524521{
 	text-align: center;
 	

@@ -67,7 +67,8 @@ li,ul,img,a,div{
 .frame-title{
 	border-bottom: #ccc solid 1px;
 }
-
+.frame-title .quit{cursor:pointer; margin-left: 550px;font-weight: bold;}
+.frame-title a:HOVER{text-decoration:none;}
 .clear{clear:both;}
 
 .frame-wrap{

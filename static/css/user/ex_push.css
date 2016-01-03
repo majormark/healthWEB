@@ -67,10 +67,9 @@ li,ul,img,a,div{
 .frame-title{
 	border-bottom: #ccc solid 1px;
 }
-.frame-title .create{
-	cursor: pointer;
-	font-size: 10px;
-}
+.frame-title .create{cursor:pointer;margin-left:550px; font-weight: bold;}
+.frame-title .quit{margin-left: 10px;font-weight: bold;}
+.frame-title a:HOVER{text-decoration:none}
 .clear{clear:both;}
 
 .frame-wrap{

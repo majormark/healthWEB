@@ -40,7 +40,7 @@ $links[] = array(
     "glyphicon glyphicon-user"
 );
 $links[] = array(
-    "推送　　 ",
+    "导入　　 ",
     "push.php",
     "glyphicon glyphicon-question-sign"
 );
@@ -78,16 +78,12 @@ $self_page = basename($_SERVER['PHP_SELF']);
 			<div class="frame-wrap">
 				<div class="tab-content">
 					<div class="tab-pane active" id="panel-783427">
-						<div class="coach-list list">
-							
-							<div class="info">
-								<span class="left"><a href="#"><strong>Demo</strong></a></span>
-								<span class="right"><a class=" theme-login" href="javascript:;">查看详情</a></span><br />
-								<p class="left">内容</p>
-								<div class="date"></div>
-							</div>
-							<div class="clear"></div>
-						</div>
+						<form action="http://localhost/healthWEB/controller/suggestion/push_controller.php" enctype="multipart/form-data method="post">
+						      <ul>
+						          <li><input class="upfile" type="file" name="up_image" /></li>
+						          <li><input class="btn" type="submit" name="submit" value="上传" /></li>
+						      </ul>
+						</form>
 					</div>
 
 					<div class="tab-pane" id="panel-524521">

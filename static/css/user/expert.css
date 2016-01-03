@@ -67,26 +67,40 @@ li,ul,img,a,div{
 .frame-title{
 	border-bottom: #ccc solid 1px;
 }
-
+.frame-title .quit{cursor:pointer; margin-left: 550px;font-weight: bold;}
+.frame-title a:HOVER{text-decoration:none;}
 .clear{clear:both;}
 
 .frame-wrap{
 	margin:30px auto;
 }
-.list{margin:8px auto; padding:4px 0; border-bottom:1px dotted #d3d3d3;height:80px;} 
-.list img{float:left; width:50px; margin:4px 0px;}
+.list{margin:8px auto; padding:4px 0; border-bottom:1px dotted #d3d3d3;height:170px;} 
+.list img{ width:50px; margin:4px 0px;}
 .list p{font-size: 10px;}
-.info{float:left; width:530px; overflow:hidden;text-align: left; margin-left: 10px;} 
-.info .left{float:left;line-height:20px;} 
+.info{ width:530px; overflow:hidden;text-align: left; margin-left: 10px;} 
 .info .left strong{margin-right:6px;} 
-.info .right{float: right;line-height:20px; } 
 .list a{
 	cursor: pointer;
 }
 
+.info .answer{vertical-align: text-top;}
 .date{color:#999;}
-
-
+.btn1{
+cursor: pointer;/*让鼠标变成手*/
+	height: 29px;
+	border-color: #ff0000;
+	color: #F3F7FC;
+	background-color: #ff0000;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 27px;
+	text-decoration: none;
+	border-radius: 2px;
+	min-width: 52px;
+	margin-top:10px;
+	margin-left:30px;
+	outline: none;
+}
 .theme-popover-mask {
 	z-index: 9998;
 	position:fixed;

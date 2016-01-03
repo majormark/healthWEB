@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>咚咚运动|我的建议</title>
+<title>咚咚运动|修改活动</title>
 <script type="text/javascript"
 	src="http://localhost/healthWEB/static/script/jquery-1.11.3.js"></script>
 <link rel="stylesheet" type="text/css"

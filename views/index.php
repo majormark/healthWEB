@@ -3,6 +3,8 @@
 <?php 
     if(empty($_SESSION['username']))
         header("Location: http://localhost/healthWEB/views/login.php");
+    if($_SESSION['role']!='user')
+        header("Location: http://localhost/healthWEB/views/login.php");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
@@ -32,16 +34,18 @@ if(!$ret){
 } 
 $sayList='';
 while ($row=$ret->fetchArray(SQLITE3_ASSOC)) { 
-    $sayList.=formatSay($row['content'],$row['addtime'],$row['userid']); 
+    $sayList.=formatSay($row['content'],$row['addtime'],$row['username']); 
 } 
 
 $db->close();
 ?> 
+
+
 <body>
 <div class="body">
     <div class="nav-frame">
         <div class="nav-title">
-            <h3>img</h3>
+            <h3><img width="200" height="200" src="http://localhost/healthWEB/static/vendor/image/big.jpg"></h3>
         </div>
         <div class="nav-wrap">
             
@@ -63,15 +67,7 @@ $db->close();
         <div class="clear"></div> 
         <div class="frame-saylist-wrap">
              <?php echo $sayList;?>
-             <div class="saylist"> 
-                <a href="#"><img src="../static/vendor/image/2.jpg" alt="" /></a> 
-                <div class="saytxt">
-                    <p><a href="#"><strong>Demo</strong></a></p> 
-                    <p>发布的内容...</p> 
-                    <div class="date"></div> 
-                </div> 
-                <div class="clear"></div> 
-            </div> 
+             
         </div>
     </div>
 </div>

@@ -72,11 +72,12 @@ li,ul,img,a,div{
 
 .frame-outer .wrap{
 	position: relative;
-	height:280px;
+	height:250px;
 }
+.demo1{position: absolute;margin-top:25px;margin-left: 200px;}
 .sleep-analyse{
 	width: 100%;
-	height: 600px;
+	height: 800px;
 	background-color: #F3F3F3;
 	border-radius:10px;
 }
@@ -105,14 +106,17 @@ li,ul,img,a,div{
 .start, .end, .total, .useful{
 	float: left;
 	position: absolute;
+	margin-top: 100px;
+	color:#666673;
 }
 
-.start{margin-left:200px;margin-top:100px;}
-.end{margin-left:300px;margin-top:100px;}
-.total{margin-left:400px;margin-top:100px;}
-.useful{margin-left:500px;margin-top:100px;}
-
+.start{margin-left:200px;}
+.end{margin-left:360px;}
+.total{margin-left:520px;}
+.useful{margin-left:600px;}
+.special-num{
+	font-size:18px;
+}
 .wrap2{
-	border:1px black solid;
-	height:300px;
+	height:500px;
 }

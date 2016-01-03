@@ -65,44 +65,29 @@ li,ul,img,a,div{
 	padding: 25px;
 }
 
-.frame-outer .title{
+.frame-outer {
 	font-family: "微软雅黑";
 }
 
 .health-con {
-	height:300px;
-}
-.health-con .target{
-	border-radius:50%;
-	width:180px;
-	height:180px;
-	background-color: #FFE3AC;
-	float:left;
-	margin-left: 40px;
-}
-
-.health-con .sleep{
-	border-radius:50%;
-	width:180px;
-	height:180px;
-	background-color: #6FC4DC;
-	float:left;
-	margin-left: 40px;
-}
-
-.health-con .health{
-	border-radius:50%;
-	width:180px;
-	height:180px;
-	background-color: #E7F5CE;
-	float:left;
-	margin-left: 40px;
+	height:250px;
 }
 
 .sports-total{
 	height:200px;
 }
-
+.sport-distance,.sport-time,.sport-energy,.sport-step{
+	float:left;
+	margin-top:50px;
+	color:#666673;
+}
+.sport-distance{margin-left: 50px;}
+.sport-time{margin-left: 90px;}
+.sport-energy{margin-left: 90px;}
+.sport-step{margin-left: 90px;}
+.special-num{
+	font-size:28px;
+}
 .distance,.time,.energy{
 	float:left;
 }
@@ -112,11 +97,12 @@ li,ul,img,a,div{
 }
 
 .sports-total .wrap .distance{ margin-left:30px;}
-.sports-total .wrap .time{ margin-left:140px;}
-.sports-total .wrap .energy{ margin-left:120px;}
-.sports-total .wrap span{float: left;}
+.sports-total .wrap .time{ margin-left:50px;}
+.sports-total .wrap .energy{ margin-left:50px;}
+.sports-total .wrap span{font-size: 28px;color: #E0B02E;}
+.sports-total .wrap ul{float: left;}
 
-.transfer{height:300px;	border:1px black solid;}
+.transfer{height:300px;}
 
 .transfer .wrap .circle, .transfer .wrap .gas{
 	width:163px;
@@ -132,3 +118,14 @@ li,ul,img,a,div{
 	float:left;
 	margin-left: 2px;
 }
+
+.rank .one{background-color: red;}
+.rank .two{background-color: #59BEDC;}
+.rank .three{background-color: #FFAD03;}
+.rank .other{background-color: #6F9D17;}
+
+.rank .wrap{text-align: left;font-size: 20px;color:#B0B0B0;}
+.rank .wrap ul{margin-left :80px;}
+.rank .wrap li{margin :5px;padding: 0;}
+.rank .wrap span{margin-right: 10px;}
+.rank .wrap .dis{margin-left: 10px;}

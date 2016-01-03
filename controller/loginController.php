@@ -21,12 +21,15 @@ EOF;
             $_SESSION['username']=$username;
             $_SESSION['password']=$passwd;
             if($row['role']=='user'){   
+                $_SESSION['role']='user';
                 header("Location: http://localhost/healthWEB/views/index.php");
                 exit();
             } else if($row['role']=='admin'){
+                $_SESSION['role']='admin';
                 header("Location: http://localhost/healthWEB/views/user/admin.php");
                 exit();
             } else {
+                $_SESSION['role']='expert';
                 header("Location: http://localhost/healthWEB/views/user/expert.php");
                 exit();
             }

@@ -45,7 +45,7 @@ $links[] = array(
     "admin_activity.php",
     "glyphicon glyphicon-user"
 );
-
+$links[]=array("账号安全","admin_accountSafe.php","glyphicon glyphicon-wrench");
 $self_page = basename($_SERVER['PHP_SELF']);
 ?>
 

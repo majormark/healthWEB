@@ -6,7 +6,7 @@
 <script type="text/javascript"
 	src="http://localhost/healthWEB/static/script/jquery-1.11.3.js"></script>
 <link rel="stylesheet" type="text/css"
-	href="http://localhost/healthWEB/static/css/user/expert.css" />
+	href="http://localhost/healthWEB/static/css/user/admin.css" />
 
 <link rel="stylesheet"
 	href="http://localhost/healthWEB/static/css/base/bootstrap.min.css" />
@@ -38,7 +38,7 @@ $links[] = array(
     "admin_activity.php",
     "glyphicon glyphicon-user"
 );
-
+$links[]=array("账号安全","admin_accountSafe.php","glyphicon glyphicon-wrench");
 $self_page = basename($_SERVER['PHP_SELF']);
 ?>
 
@@ -109,6 +109,7 @@ EOF;
 		<div class="frame-outer">
 			<div class="frame-title">
 				<h3>用户列表</h3>
+				<a class="quit" href="http://localhost/healthWEB/views/login.php">退出</a>
 			</div>
 
 			<div class="frame-wrap">

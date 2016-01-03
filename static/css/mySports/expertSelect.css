@@ -77,10 +77,8 @@ li,ul,img,a,div{
 .info .left{float:left;line-height:20px;} 
 .info .left strong{margin-right:6px;} 
 .info .right{float: right;line-height:20px; } 
-.list a{
-	cursor: pointer;
-}
-
+.list a{text-decoration: none; cursor: pointer;}
+.list a:HOVER{text-decoration: none; cursor: pointer;}
 .date{color:#999;}
 
 

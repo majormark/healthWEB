@@ -1,4 +1,4 @@
-<?php include '../base.php';?>
+<?php include_once '../base.php';?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -30,6 +30,67 @@ $links[] = array(
     "glyphicon glyphicon-wrench"
 );
 $self_page = $_SERVER['PHP_SELF'];
+?>
+
+<?php 
+    			         require_once('../../model/sqlHelper/connect.php');
+    			         $db=new MyDB();
+    			         if(!$db){
+    			             echo $db->lastErrorMsg();
+    			         }
+    			         $user=$_SESSION['username'];
+    			         $sql =<<<EOF
+      SELECT * FROM user where nickname='$user'
+EOF;
+    			         $ret = $db->query($sql);
+    			         if(!$ret){
+    			             echo $db->lastErrorMsg();
+    			         }
+    			         
+    			         $info='';
+    			         while($row=$ret->fetchArray(SQLITE3_ASSOC)){
+    			             $info.=formatSay($row['sex'],$row['birthday'],$row['address'],$row['hobby'],$row['content']);
+    			         }
+    			         
+    			         function formatSay($sex,$birthday,$address,$hobby,$content){
+    			             $birth=explode("-",$birthday);
+    			             $str="";
+    			             if($sex==1){
+    			                 $str.='<li>　　性别<input class="item-radio" type="radio" name="sex" value="male" checked="checked"/>男<input 
+									class="item-radio" type="radio" name="sex" value="female" />女
+								</li>';
+    			             } else {
+    			                 $str.='<li>　　性别<input class="item-radio" type="radio" name="sex" value="male" />男<input
+									class="item-radio" type="radio" name="sex" value="female" checked="checked"/>女
+								</li>';
+    			             }
+    			             
+    			             $str.= '
+		             		<li>　　生日<input class="item" type="text" name="year" value="'.$birth[0].'" /><select class="item-select" name="month">';
+										
+							for($i=1;$i<13;$i++){
+								    $str.='<option ';
+								    if($i==$birth[1]){
+								        $str.='selected="selected"';
+								    }
+								        $str.='>'.$i.'</option>';
+							}	
+							$str.='</select><select class="item-select" name="day">';
+							for($i=1;$i<=31;$i++){
+							    $str.='<option ';
+								    if($i==$birth[2]){
+								        $str.='selected="selected"';
+								    }
+								        $str.='>'.$i.'</option>';
+							}
+							$str.='</select></li>
+								<li>　所在地<input type="text" class="item" name="location" value="'.$address.'"></li>
+										
+								<li>　　兴趣<input class="item" type="text" name="hobby" value="'.$hobby.'"/></li>
+								<li>运动宣言<textarea class="content" name="content" rows="2" cols="40" >'.$content.'</textarea></li>
+		    ';
+							return $str;
+    			         }
 ?>
 <body>
 	<div class="body">
@@ -68,29 +129,20 @@ $self_page = $_SERVER['PHP_SELF'];
 			<div class="frame-wrap">
 				<div class="tab-content">
 					<div class="tab-pane active" id="panel-783427">
-						<form action="#" method="post">
+						<form action="http://localhost/healthWEB/controller/user/accountSet_controller.php" method="post">
 							<ul class="info">
-								<li>　　昵称<input class="item" type="text" name="nickname" /></li>
-								<li>　　性别<input class="item-radio" type="radio" name="sex" value="male" />男<input 
-									class="item-radio" type="radio" name="sex" value="female" />女
-								</li>
-								<li>　　生日<input class="item" type="text" name="year" /><select class="item-select" name="month"><option>8</option>
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option></select>
-										
-										<select class="item-select" name="day"><option>1</option></select></li>
-								<li>　所在地<select class="item" name="location">
-								        <option>北京</option>
-										<option>上海</option>
-										<option>昆明</option>
-										<option>广州</option>
-										<option>南京</option></select></li>
-										
-								<li>　　兴趣<input class="item" type="text" name="nickname" /></li>
-								<li>运动宣言<textarea class="content" name="content" rows="2" cols="40" ></textarea></li>
-								<li><input class="btn" type="submit" name="save" value="保存"/></li>
+								<?php echo $info;?>
+                                 <li><span style="font-size: 10px;color:red;margin-left:80px;">
+							     <?php 
+							     if(!empty($_GET['errno'])) {
+							         $errno=$_GET['errno'];
+							         if($errno==2){
+							             echo '修改成功!';
+							         } 
+							     }
+							     ?>
+							</span></li>
+                             <li><input class="btn" type="submit" name="save" value="保存"/></li>
 							</ul>
 
 						</form>

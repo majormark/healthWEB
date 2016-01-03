@@ -17,6 +17,33 @@ $links[]=array("身体管理","body_con.php","glyphicon glyphicon-heart");
 $links[]=array("睡眠分析","sleep_con.php","glyphicon glyphicon-eye-close");
 $self_page = basename($_SERVER['PHP_SELF']);
 ?>
+<?php 
+    			         require_once('../../model/sqlHelper/connect.php');
+    			         $db=new MyDB();
+    			         if(!$db){
+    			             echo $db->lastErrorMsg();
+    			         }
+    			         $user=$_SESSION['username'];
+    			         $sql =<<<EOF
+      SELECT * FROM body_con where username='$user'
+EOF;
+    			         $ret = $db->query($sql);
+    			         if(!$ret){
+    			             echo $db->lastErrorMsg();
+    			         }
+    			         
+    			        
+    			         $row=$ret->fetchArray(SQLITE3_ASSOC);
+    			         $height=$row['height'];   
+    			         $weight=$row['weight'];
+    			         if(is_numeric($height)&&is_numeric($weight)){
+    			             $bmi=$weight/(($height*0.01)*($height*0.01));
+    			         } else{
+    			             $bmi=17;
+    			         }
+    			         $normal=22*($height*0.01)*($height*0.01);
+    			  
+?>
 <body>
 <div class="body">
     <div class="nav-frame">
@@ -46,15 +73,24 @@ $self_page = basename($_SERVER['PHP_SELF']);
         <div class="health-bmi">
             <div class="wrap">
                 <div class="circle-result">
-                    <p class="health-lv">健康</p>
-                    <p class="bmi-lv" >BMI</p>
+                    <p class="health-lv">
+                    <?php if($bmi<18.5)
+                                echo '偏轻';
+                          else if($bmi<24)
+                              echo '健康';
+                          else if($bmi<28)
+                              echo '超重';
+                          else 
+                              echo '肥胖';
+                        ?></p>
+                    <p class="bmi-lv" >BMI<?php echo round($bmi,1);?></p>
                 </div>
                 <div class="back-small">
-                    <form action="#" method="post">
+                    <form action="http://localhost/healthWEB/controller/sports/body_controller.php" method="post">
                         <ul>
                             
-                            <li>身高<input class="input" name="height" type="text" /> 厘米</li>
-                            <li>体重<input class="input" name="weight" type="text" /> 公斤</li>
+                            <li>身高<input class="input" name="height" type="text" value="<?php echo $height;?>" /> 厘米</li>
+                            <li>体重<input class="input" name="weight" type="text" value="<?php echo $weight;?>"/> 公斤</li>
                             <li><input class="btn" name="submit" type="submit" value="保存">
                         </ul>
                     </form>
@@ -68,6 +104,26 @@ $self_page = basename($_SERVER['PHP_SELF']);
                         <li class="four"><span style="margin-left: -80px;color:white;">28</span></li>
                         
                     </ul>
+                </div>
+                <div class="advice">
+                    <p><span class="special">“</span>你的理想体重是<span class="special"><?php echo round($normal,1);?></span>公斤,
+                    <?php if($weight<$normal) {
+                        $energy=($normal-$weight)*3000;
+                        echo '还需要摄入热量';
+                    }  else {
+                        $energy=($weight-$normal)*3000;
+                              echo '还需要消耗热量';
+                          }
+                        ?><span class="special"><?php echo $energy;?></span>大卡，
+                        <?php 
+                        if($weight<$normal) {
+                            $energy=($normal-$weight)*3000;
+                            echo '注意加强营养，合理搭配膳食！！';
+                        }  else {
+                            $energy=($weight-$normal)*3000;
+                            echo '为了好身材，继续努力吧！';
+                        }
+                        ?></p>
                 </div>
             </div>
         </div>

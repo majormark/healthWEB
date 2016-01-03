@@ -46,8 +46,9 @@ $links[] = array(
     "ex_accountSet.php",
     "glyphicon glyphicon-user"
 );
+$links[]=array("账号安全","ex_accountSafe.php","glyphicon glyphicon-wrench");
 $links[] = array(
-    "推送　　 ",
+    "导入　　 ",
     "ex_push.php",
     "glyphicon glyphicon-question-sign"
 );
@@ -58,6 +59,7 @@ $self_page = basename($_SERVER['PHP_SELF']);
 		<div class="nav-frame">
 			<div class="nav-title">
 				<h3>建议管理</h3>
+				
 			</div>
 			<div class="nav-wrap">
 				<ul class="nav-ul">
@@ -75,22 +77,27 @@ $self_page = basename($_SERVER['PHP_SELF']);
 		<div class="frame-outer">
 			<div class="frame-title">
 				<h3>推送列表</h3>
-				<a class="create" href="javascript:;">编写新推送</a>
+				<a class="quit" href="http://localhost/healthWEB/views/login.php">退出</a>
 			</div>
 
 			<div class="frame-wrap">
-    			<div class="list">
-    				<a href="#"><img
-    					src="http://localhost/healthWEB/static/vendor/image/2.jpg"
-    					alt="" /></a>
-    				<div class="info">
-    					<span class="left"><a href="#"><strong>Demo</strong></a></span>
-    					<span class="right"><a class="theme-login" href="javascript:;">查看详情</a></span><br />
-    					<p class="left">内容</p>
-    					<div class="date"></div>
-    				</div>
-    				<div class="clear"></div>
-    			</div>
+    			<form action="http://localhost/healthWEB/controller/suggestion/push_controller.php" enctype="multipart/form-data" method="post">
+				      <ul>
+				          <li><input class="upfile" type="file" name="file" /></li>
+				          <li><input class="btn" type="submit" name="submit" value="上传" /></li>
+				          <li><?php 
+                           if(!empty($_GET['errno'])) {
+                               $errno=$_GET['errno'];
+                               if($errno==1){
+                                   echo '<font color="red">密码错误!</font>';
+                               } else if($errno==2){
+                                   echo '<font color="red">提交成功!</font>';
+                               }
+                           }
+                               
+                        ?></li>
+				      </ul>
+				</form>
 			</div>
 		</div>
 	</div>

@@ -70,13 +70,12 @@ li,ul,img,a,div{
 .frame-wrap{
 	margin:30px auto;
 }
-.list{margin:8px auto; padding:4px 0; border-bottom:1px dotted #d3d3d3;height:80px;} 
-.list img{float:left; width:50px; margin:4px 0px;}
+.list{margin:8px auto; padding:4px 0; border-bottom:1px dotted #d3d3d3;height:120px;} 
 .list p{font-size: 10px;}
-.info{float:left; width:530px; overflow:hidden;text-align: left; margin-left: 10px;} 
-.info .left{float:left;line-height:20px;} 
+.info{ width:530px; overflow:hidden;text-align: left; margin-left: 10px;} 
+.info .left{} 
 .info .left strong{margin-right:6px;} 
-.info .right{float: right;line-height:20px; } 
+
 .list a{
 	cursor: pointer;
 }
